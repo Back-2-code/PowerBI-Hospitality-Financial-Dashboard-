@@ -1,5 +1,6 @@
 # Hospitality Financial Analysis
 
+![page 2](https://github.com/Back-2-code/PowerBI-Hospitality-Financial-Dashboard-/assets/97646657/334e7f03-b027-43a7-9dc2-37de2f1b5dd6)
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Data Sources](#data-sources)
@@ -43,6 +44,19 @@ EDA involved exploring the sales data to answer key questions, such as:
 
 ### Data Analysis
 
+Some common terms for the hospitality industry that would be required to perform the analysis -
+
+Friday and Saturday is considered as the weekend days. Total available rooms are not always equal to total number of rooms in a hotel. The rooms may require maintenance (plumbing, electrical etc) which reduces total available rooms.  
+
+Total available rooms are also known as DSRN - Daily Sellable Room Nights.
+RevPar - Revenue per available room  => Revenue / Total available room or it can also be calculated as ADR x Occupancy
+ADR - Average Daily Rate => Total Revenue/Number of Rooms sold
+Occupancy % - Total occupied rooms / Total available rooms
+URN - Utilised Room Nights or actual rooms booked
+BRN - Booked Room Nights + no show + cancellation
+Realization % = URN / BRN
+
+
 ```dax
 Revenue WoW change % = 
 Var selv = IF(HASONEFILTER(dim_date[wn]),SELECTEDVALUE(dim_date[wn]),MAX(dim_date[wn]))
@@ -55,17 +69,17 @@ return DIVIDE(revcw,revpw,0)-1
 ### Results and Findings
 
 The analysis results are summarized as follows:
-1. The company's sales have been steadily increasing over the past year, with a noticeable peak during the holiday season.
-2. Product Category A is the best-performing category in terms of sales and revenue.
-3. Customer segments with high lifetime value (LTV) should be targeted for marketing efforts.
+1. Demand changes significantly from weekdays to weekends  
+2. The company's revenue has been steadily increasing over the past quarter, as the holiday season is approaching.
+3. Revenue has stayed constant for some hotels even though the occupancy was at its peak.
+4. Customer segments with high lifetime value (LTV) should be targeted for marketing efforts.
+
+![image](https://github.com/Back-2-code/PowerBI-Hospitality-Financial-Dashboard-/assets/97646657/b664e9da-30fa-44ca-9eed-c3d8ae0f54de)
+
 
 ### Recommendations
 
 Based on the analysis, we recommend the following actions:
-- Invest in marketing and promotions during peak sales seasons to maximize revenue.
-- Focus on expanding and promoting products in Category A.
-- Implement a customer segmentation strategy to target high-LTV customers effectively.
-
-### Limitations
-
-I had to remove all zero values from budget and revenue columns because they would have affected the accuracy of my conclusions from the analysis. There are still a few outliers even after the omissions but even then we can still see that there is a positive correlation between both budget and number of votes with revenue.
+- Weekly pricing of the rooms should be adopted to maximize revenue for weekend bookings.
+- Invest in marketing, promotions, and reputation on booking platforms to improve occupancy in low-performing hotel.
+- Dynamic strategic pricing before the holiday season to account for seasonal change.
