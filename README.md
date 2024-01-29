@@ -1,6 +1,6 @@
 # Hospitality Financial Analysis
 
-#Table of Contents
+## Table of Contents
 - [Project Overview](#project-overview)
 - [Data Sources](#data-sources)
 - [Scope of the project](#scope-of-the-project)
